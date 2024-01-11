@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -21,12 +21,14 @@ export class AppComponent {
   registerForm = this.fb.group({
     id: "2",
     domainName: "",
-    domain: "",
+    domain: this.fb.group({
+      type: "" 
+    })
   });
 
   domainTypes = [
-    { id:1 , title: "ee"},
-    { id:2 , title: "eu"}
+    "ee",
+    "eu"
   ]
 
   constructor(private fb: FormBuilder) {}
