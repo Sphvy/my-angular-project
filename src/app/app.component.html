@@ -1,17 +1,8 @@
-<div class="p-52">
-  <form class="form" [formGroup]="registerForm" class="border p-10 bg-slate-100">
-    <div class="field">
-      <label class="label" class="p-4 text-2xl">Domeeni Nimi: </label>
-      <input class="hover:bg-slate-50" formControlName="domainName">
-    </div>
-    <div class="field" formGroupName="domain">
-      <label class="label" class="p-4 text-2xl">Domeen: </label>
-      <select formControlName="type">
-        <option class="p-1 text-1xl" *ngFor="let types of domainTypes" [ngValue]="types">{{types}}</option>
-      </select>
-    </div>
-    <div class="field" class="p-4">
-      <button type="button" class="border-2 rounded border-green-300 bg-green-200" (click)="onSubmit()" >Register</button>
-    </div>
-  </form>
+
+<nav>
+  <button (click)="onSubmit()" class="border-2 rounded border-green-300 bg-green-200">Register Page</button>
+</nav>
+
+<div>
+  <router-outlet></router-outlet>
 </div>

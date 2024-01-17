@@ -13,22 +13,29 @@ import { FormBuilder, FormControl } from '@angular/forms';
     RouterOutlet, 
     ReactiveFormsModule, 
   ], 
-  templateUrl: './enter-data.component.html',
-  styleUrl: './enter-data.component.css'
+  templateUrl: './first-page.component.html',
+  styleUrl: './first-page.component.css'
 })
-export class EnterDataComponent {
+export class FirstPageComponent {
+
   registerForm = this.fb.group({
     id: "2",
-    email: "",
-    password: "",
+    domainName: "",
+    domain: this.fb.group({
+      type: "" 
+    })
   });
 
+  domainTypes = [
+    "ee",
+    "eu"
+  ]
 
   constructor(private fb: FormBuilder, private router: Router) {}
 
   onSubmit() {
     console.log('submitted form ', this.registerForm.value)
 
-    this.router.navigate(['/thank-you']);
+    this.router.navigate(['/enter-data']);
   }
 }

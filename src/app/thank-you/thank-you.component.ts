@@ -13,13 +13,7 @@ import { FormBuilder, FormControl } from '@angular/forms';
     RouterOutlet, 
     ReactiveFormsModule, 
   ], 
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './thank-you.component.html',
+  styleUrl: './thank-you.component.css'
 })
-export class AppComponent {
-  constructor (private router: Router) {}
-
-  onSubmit() {
-    this.router.navigate(['/first-page']);
-  }
-}
+export class ThankYouComponent {}
